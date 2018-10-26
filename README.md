@@ -1,9 +1,11 @@
 # LightningComponentsAssignment
 
 Objetivos
+
 El objetivo del siguiente assignment es crear un lightning component funcional que se pueda integrar a cualquier objeto de Salesforce y mediante el cual se pueda hacer un drag and drop de imágenes para guardarlas, y a su vez permita verlas y borrarlas.
 
 Requerimientos
+
 El componente debe cumplir con las siguientes características:
 
 Permitir el drag and drop de una imagen dentro de una sección del componente.
