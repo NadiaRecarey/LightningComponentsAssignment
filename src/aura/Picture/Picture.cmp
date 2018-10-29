@@ -9,7 +9,7 @@
     <aura:attribute name="pictureSrc" type="String" 
             default="https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png"/>
     <aura:attribute name="message" type="String" default="Drag a picture here"/>
-    <aura:attribute name="hasPicture" type="Boolean" default="false"
+    <aura:attribute name="hasPicture" type="Boolean" default="false"/>
 
     
     <lightning:card class="slds-is-relative">

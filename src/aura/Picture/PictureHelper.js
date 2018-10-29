@@ -28,6 +28,19 @@
         });
         component.set("v.message", "Uploading...");
         $A.enqueueAction(action); 
-    }
+    },
+
+    delete : function (component, helper){
+        var action = component.get("c.deletePicture"); 
+        action.setParams({
+            parentId: component.get("v.recordId"),
+        });
+        action.setCallback(this, function(a) {
+            component.set('v.pictureSrc', 'https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png');
+            component.set('v.message', 'Drag a picture here');
+            component.set("v.hasPicture", "false");
+        });
+        $A.enqueueAction(action); 
+    },
 
 })

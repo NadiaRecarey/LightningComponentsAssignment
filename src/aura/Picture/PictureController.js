@@ -17,7 +17,7 @@
                 component.set("v.hasPicture", "true");
             }else{ 
                 component.set("v.hasPicture", "false");
-            }            
+            }       
             $A.util.addClass(spinner, "slds-hide");
         });
         $A.enqueueAction(action); 
@@ -28,6 +28,7 @@
     },
 
     onDrop: function(component, event, helper) {
+        helper.delete(component, helper);
 		event.stopPropagation();
         event.preventDefault();
         event.dataTransfer.dropEffect = 'copy';
@@ -36,19 +37,11 @@
             return alert("You can only upload one picture");
         }
         helper.readFile(component, helper, files[0]);
+        var spinner = component.find("spinner");
 	},
     
     delete : function(component, event, helper){
-    	var action = component.get("c.deletePicture"); 
-        action.setParams({
-            parentId: component.get("v.recordId"),
-        });
-        action.setCallback(this, function(a) {
-            component.set('v.pictureSrc', 'https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png');
-            component.set('v.message', 'Drag a picture here');
-            component.set("v.hasPicture", "false");
-        });
-        $A.enqueueAction(action); 
+    	helper.delete(component, helper);
 	},
     
 })
