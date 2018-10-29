@@ -14,3 +14,11 @@ Si se hace drag and drop de otra imagen ya habiendo una guardada, entonces la pr
 Al lado de la imagen debería haber un botón para borrar la imagen actual. El mismo solo se debería mostrar si hay una imagen guardada. Si no la hay, el botón no debería estar.
 El componente debería poder agregarse al layout de cualquier objeto mediante el Lightning App Builder.
 
+
+# SOLUTION
+
+code taken from the salesforce blog https://developer.salesforce.com/blogs/developer-relations/2015/11/create-lightning-component-drag-drop-profile-pictures.html
+
+spinner taken from the trailhead https://trailhead.salesforce.com/en/content/learn/projects/workshop-lightning-programmatic/lightning-data-service-design-parameters
+
+added code for deletion
