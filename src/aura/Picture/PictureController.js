@@ -1,6 +1,9 @@
 ({  
     // Load current picture
     onInit: function(component) {
+        var spinner = component.find("spinner");
+        $A.util.removeClass(spinner, "slds-hide");
+
         var action = component.get("c.getPicture"); 
         action.setParams({
             parentId: component.get("v.recordId"),
@@ -12,7 +15,10 @@
 	            component.set('v.pictureSrc', '/servlet/servlet.FileDownload?file=' 
                                                   + attachment.Id);
                 component.set("v.hasPicture", "true");
-            }
+            }else{ 
+                component.set("v.hasPicture", "false");
+            }            
+            $A.util.addClass(spinner, "slds-hide");
         });
         $A.enqueueAction(action); 
     },
@@ -31,18 +37,6 @@
         }
         helper.readFile(component, helper, files[0]);
 	},
-    
-    // this function automatic call by aura:waiting event  
-    showSpinner: function(component, event, helper) {
-       // make Spinner attribute true for display loading spinner 
-        component.set("v.Spinner", true); 
-   },
-    
- 	// this function automatic call by aura:doneWaiting event 
-    hideSpinner : function(component,event,helper){
-     // make Spinner attribute to false for hide loading spinner    
-       component.set("v.Spinner", false);
-    },
     
     delete : function(component, event, helper){
     	var action = component.get("c.deletePicture"); 
